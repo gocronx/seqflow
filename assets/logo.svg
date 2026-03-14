@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="b" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="d" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 背景光晕 -->
+  <circle cx="200" cy="200" r="155" stroke="url(#b)" stroke-width="40" fill="none" filter="url(#soft)"/>
+
+  <!-- 外环 -->
+  <circle cx="200" cy="200" r="148" stroke="url(#a)" stroke-width="3" fill="none" opacity="0.55"/>
+
+  <!-- 内环虚线 -->
+  <circle cx="200" cy="200" r="112" stroke="url(#c)" stroke-width="1.5" fill="none" opacity="0.2" stroke-dasharray="6 10"/>
+
+  <!-- 环上 8 个槽位，顺时针亮度递减，大小递减 -->
+  <circle cx="200" cy="52"  r="7"   fill="url(#a)" filter="url(#glow)"/>
+  <circle cx="305" cy="95"  r="6"   fill="url(#a)" opacity="0.75"/>
+  <circle cx="348" cy="200" r="5.5" fill="url(#c)" opacity="0.55"/>
+  <circle cx="305" cy="305" r="5"   fill="url(#c)" opacity="0.38"/>
+  <circle cx="200" cy="348" r="4.5" fill="url(#c)" opacity="0.24"/>
+  <circle cx="95"  cy="305" r="4"   fill="url(#d)" opacity="0.15"/>
+  <circle cx="52"  cy="200" r="3.5" fill="url(#d)" opacity="0.10"/>
+  <circle cx="95"  cy="95"  r="3"   fill="url(#a)" opacity="0.06"/>
+
+  <!-- 三条流动弧线 -->
+  <!-- 外弧 -->
+  <path d="M 120 100 Q 200 55 280 100" stroke="url(#c)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+  <polygon points="283,97 273,90 275,103" fill="#8B5CF6" opacity="0.45"/>
+
+  <!-- 主弧（最亮最粗） -->
+  <path d="M 100 145 Q 200 72 300 145" stroke="url(#d)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+  <polygon points="304,142 291,131 294,147" fill="#22D3EE"/>
+
+  <!-- 内弧 -->
+  <path d="M 125 188 Q 200 142 275 188" stroke="url(#c)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.35"/>
+  <polygon points="278,186 269,180 270,191" fill="#0EA5E9" opacity="0.35"/>
+
+  <!-- 中心圆形底衬 -->
+  <circle cx="200" cy="258" r="62" fill="url(#a)" opacity="0.06"/>
+
+  <!-- 中心图案：S 形序列流线条 -->
+  <path d="M 168 232 C 168 232 185 218 200 218 C 215 218 232 232 232 232" stroke="url(#d)" stroke-width="3.5" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M 168 258 C 168 258 185 272 200 272 C 215 272 232 258 232 258" stroke="url(#c)" stroke-width="3.5" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- S 形连线 -->
+  <path d="M 232 232 C 240 244 240 246 232 258" stroke="url(#a)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 168 232 C 160 244 160 246 168 258" stroke="url(#a)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- S 两端箭头 -->
+  <polygon points="164,230 170,222 175,234" fill="#0EA5E9" opacity="0.8"/>
+  <polygon points="236,260 230,268 225,256" fill="#8B5CF6" opacity="0.8"/>
+
+  <!-- 底部三个小点：代表 DAG 拓扑分叉 -->
+  <circle cx="182" cy="310" r="4" fill="url(#c)" opacity="0.5"/>
+  <circle cx="200" cy="316" r="5" fill="url(#a)" opacity="0.65" filter="url(#glow)"/>
+  <circle cx="218" cy="310" r="4" fill="url(#d)" opacity="0.5"/>
+
+  <!-- 三个点到 S 底部的细线 -->
+  <line x1="182" y1="306" x2="192" y2="276" stroke="url(#c)" stroke-width="1" opacity="0.3"/>
+  <line x1="200" y1="311" x2="200" y2="276" stroke="url(#a)" stroke-width="1.2" opacity="0.4"/>
+  <line x1="218" y1="306" x2="208" y2="276" stroke="url(#d)" stroke-width="1" opacity="0.3"/>
+</svg>

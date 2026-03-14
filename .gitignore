@@ -1,0 +1,29 @@
+# 编译产物
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go 工具链
+vendor/
+go.sum
+
+# 性能分析
+*.prof
+*.pprof
+*.trace
+benchmark_results.txt
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 调试
+__debug_bin*
