@@ -1,0 +1,10 @@
+{
+  "link.title.Docs": { "message": "文档" },
+  "link.title.Ecosystem": { "message": "生态" },
+  "link.title.Community": { "message": "社区" },
+  "link.item.label.Getting Started": { "message": "快速开始" },
+  "link.item.label.API Reference": { "message": "API 参考" },
+  "link.item.label.seqdelay": { "message": "seqdelay" },
+  "link.item.label.GitHub Issues": { "message": "GitHub Issues" },
+  "copyright": { "message": "Copyright {year} gocronx." }
+}
